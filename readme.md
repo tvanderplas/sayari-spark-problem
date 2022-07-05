@@ -13,7 +13,7 @@ My solution to [this problem](https://gist.github.com/jvani/0bc9a6aa143c5cc8bdd7
 
 Reading the json to dataframes reveals 2 datasets with very similar structure:
 
-<diagram1.png>
+![](diagram1.png "data diagram")
 
 The OFAC dataset is larger than GBR and contains more record types:
 
