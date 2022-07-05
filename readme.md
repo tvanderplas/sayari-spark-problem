@@ -7,7 +7,7 @@ My solution to [this problem](https://gist.github.com/jvani/0bc9a6aa143c5cc8bdd7
 1. Download the project
 2. Create a python environment and install requirements
 3. From project root, run `spark-submit --master local app.py`
-4. result will be a csv file in the output folder
+4. The result will be a csv file in the `data/output` folder
 
 ## Initial Observations
 

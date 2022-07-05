@@ -1,5 +1,6 @@
 
 from pyspark.sql import SparkSession
+import os
 
 spark = SparkSession.builder \
     .master("local[1]") \
@@ -9,8 +10,8 @@ spark = SparkSession.builder \
 spark.sparkContext.setLogLevel("WARN")
 
 # Read JSON into dataframes
-gbr = spark.read.json("gbr.jsonl.gz")
-ofac = spark.read.json("ofac.jsonl.gz")
+gbr = spark.read.json(os.path.join("data", "source", "gbr.jsonl.gz"))
+ofac = spark.read.json(os.path.join("data", "source", "ofac.jsonl.gz"))
 gbr.createOrReplaceTempView("gbr")
 ofac.createOrReplaceTempView("ofac")
 
@@ -18,4 +19,4 @@ ofac.createOrReplaceTempView("ofac")
 with open("sanctioned_uk_ofac.sql", "r") as sqlfile:
     query = sqlfile.read()
 result = spark.sql(query)
-result.write.csv("output")
+result.write.csv(os.path.join("data", "output"))
