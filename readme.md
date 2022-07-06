@@ -33,4 +33,4 @@ My approach is to identify fields that make sense as identifiers and use them to
 
  * Some names appear more than once within both datasets. Since the duplicates all appear to refer to the same individual or entity, I decided not to exclude them from the results. 
  * Even though GBR and OFAC use different language for ID number comments, matching on only ID number values is very accurate. 
- * The addresses in OFAC have a problem with extra commas that need to be handled. 
+ * The addresses in OFAC have a problem with extra commas that needs to be handled. 
