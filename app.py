@@ -10,9 +10,9 @@ spark = SparkSession.builder \
 spark.sparkContext.setLogLevel("WARN")
 
 # Read JSON into dataframes
-gbr = spark.read.json(os.path.join("data", "source", "gbr.jsonl.gz"))
+uk = spark.read.json(os.path.join("data", "source", "gbr.jsonl.gz"))
 ofac = spark.read.json(os.path.join("data", "source", "ofac.jsonl.gz"))
-gbr.createOrReplaceTempView("gbr")
+uk.createOrReplaceTempView("uk")
 ofac.createOrReplaceTempView("ofac")
 
 # Run SQL
