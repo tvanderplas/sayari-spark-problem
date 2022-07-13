@@ -3,7 +3,7 @@ from pyspark.sql import SparkSession
 import os
 
 spark = SparkSession.builder \
-    .master("local[1]") \
+    .master("local") \
     .appName("Sayari Spark Task") \
     .getOrCreate()
 
@@ -19,4 +19,4 @@ ofac.createOrReplaceTempView("ofac")
 with open("sanctioned_uk_ofac.sql", "r") as sqlfile:
     query = sqlfile.read()
 result = spark.sql(query)
-result.write.csv(os.path.join("data", "output"))
+result.write.mode('overwrite').csv(os.path.join("data", "output"))

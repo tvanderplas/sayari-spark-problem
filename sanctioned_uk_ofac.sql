@@ -8,7 +8,7 @@ name_match as (
         "name match" as reason
     from ofac
     join uk
-        on ofac.name = uk.name
+        on trim(lcase(ofac.name)) = trim(lcase(uk.name))
 ),
 -- get records with matching ID numbers
 ofac_id_numbers as (
